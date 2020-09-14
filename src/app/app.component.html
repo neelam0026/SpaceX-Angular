@@ -1,0 +1,56 @@
+
+<div class="space-container bg-warning">
+  <h3 class="header-title d-flex justify-content-center font-weight-bold p-2"> SpaceX Launch Programs  </h3>
+  <div class="container d-flex justify-content-between">
+    <div class="row">
+        <div class="col-md-2 bg-light p-2 border ">
+          <div class="left-header">
+            <span class="text-grey font-weight-bold"> Filter</span> 
+            <p class="text-center border-bottom">Launch Year</p>
+          </div>
+          <div class="year-pill">
+            <button type="button" class="btn btn-success m-1" *ngFor="let year of yearArray" (click)="updateFilter('launch_year',year)">{{year}}</button>
+            
+            <div class="success-launch my-3 ">
+              <p class="text-center border-bottom">Successful Launch</p>
+              <button type="button" (click)="updateFilter('launch_success',true)" class="btn btn-success m-1">True</button>
+              <button type="button" (click)="updateFilter('launch_success',false)" class="btn btn-success m-1">False</button>
+            </div>
+            <div class="success-launch my-3 ">
+              <p class="text-center border-bottom">Successful Landing</p>
+              <button type="button" (click)="updateFilter('land_success',true)" class="btn btn-success m-1">True</button>
+              <button type="button" (click)="updateFilter('land_success',false)" class="btn btn-success m-1">False</button>
+            </div>
+          </div>
+        </div> <!--COl-md-3---->
+        <div class="col-md-10 bg-light">
+          <div class="row">
+            <div class="col-md-4 col-12 col-xs-12" *ngFor="let spacex of spacexList">
+              <div class="card border p-2 m-3">
+                <img class="card-img-top" [src]="spacex.image" alt="Card image cap">
+                <div class="card-body border-bottom my-1">
+                  <h5 class="card-title text-info ">{{spacex.mission_name}} : #{{spacex.flight_number}} </h5>
+                </div>
+                <div class="list ">
+                  <p class="list-item font-weight-bold">Mission ID: {{spacex.missionId}}</p>
+                  <p class="list-item font-weight-bold">Launch Year: {{spacex.launch_year}}</p>
+                  <p class="list-item font-weight-bold">SuccessFul Launch: {{spacex.launch_Success==true ? "True":"False"}}</p>
+                  <p class="list-item font-weight-bold">SuccessFul Landing: {{spacex.land_Success==true ? "True":"False"}}</p>
+                </div>              
+              </div>
+            </div> <!-- Card 1 -->
+          </div><!--card box row-->
+        </div>
+    </div>
+  </div> <!-- Card Container -->
+
+
+
+  <div class="row bg-info d-flex justify-content-center">
+    <div class="developer">
+      <span class="font-weight-bold">Developed By : Neelam Kumari</span>
+    </div>
+  </div>
+
+
+</div>

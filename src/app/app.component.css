@@ -1,0 +1,22 @@
+.app main, .app footer {
+  padding-left: 1rem;
+}
+
+.footer {
+  background: #3F729B;
+  padding: 2em;
+}
+
+p {
+  margin-bottom: .5rem;
+}
+
+.card .card-img-top {
+  width: 80%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
